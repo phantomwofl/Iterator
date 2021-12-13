@@ -22,13 +22,7 @@ public class Randoms implements Iterable<Integer> {
 
             @Override
             public Integer next() {
-                int number = random.nextInt();
-                while (hasNext()) {
-                    if (number >= min && number <= max) {
-                        return number;
-                    } else number = random.nextInt();
-                }
-                return number;
+                return random.nextInt(max - min + 1) + min;
             }
         };
     }
